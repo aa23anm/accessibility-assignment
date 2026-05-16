@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,
@@ -8,7 +8,7 @@
     <style>
         :root {
             --accent: #c5a059;
-            --muted: #a1a1aa;
+            --muted: #5c5c66;
             --bg: #ffffff;
         }
         
@@ -56,6 +56,7 @@
 
         .btn-black { background: #000; color: #fff; padding: 15px 30px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; margin-top: 20px; }
         input, select { width: 100%; padding: 12px; border: 1px solid #e4e4e7; margin-top: 8px; box-sizing: border-box; }
+        .btn-black:hover, .btn-black:focus-visible { background: #333;}
 
         
         .ghost-coupon { opacity: 0; padding: 10px; border: 1px dashed var(--accent); margin-top: 20px; transition: opacity 0.3s; }
@@ -68,11 +69,11 @@
 
     <header>
         <div class="logo" onclick="location.reload()">VOGUE & VALOR</div>
-        <div class="nav-links">
+        <nav class="nav-links" aria-label="Main navigation">
             <div class="nav-item" onclick="openMod('cart')">Bag (0)</div>
             <div class="nav-item" onclick="openMod('size')">Size Guide</div>
             <div class="nav-item" onclick="openMod('auth')">Account</div>
-        </div>
+        </nav>
     </header>
 
     <main id="main-content">
@@ -87,21 +88,21 @@
     <h2 class="section-title">Featured Curations</h2>
     
     <div class="grid" id="catalog">
-        <div class="product-card">
+        <div class="product-card" tabindex="0">
             <img src="https://images.unsplash.com/photo-1539109132382-381bb3f1c2b5?auto=format&fit=crop&w=400&q=80" alt="Model wearing Midnight Trench coat">
             <div class="product-info">
                 <span>Midnight Trench</span><br>
                 <span class="price">$890.00</span>
             </div>
         </div>
-        <div class="product-card">
+        <div class="product-card" tabindex="0">
             <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Ivory Pleated Trouser product image">
             <div class="product-info">
                 <span>Ivory Pleated Trouser</span><br>
                 <span class="price">$450.00</span>
             </div>
         </div>
-        <div class="product-card">
+        <div class="product-card" tabindex="0">
             <button style="width:100%; height:400px; background:#f9f9f9; border:none; cursor:pointer;">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa"><path d="M12 5v14M5 12h14"/></svg>
             </button>
@@ -150,9 +151,9 @@
             <h3 id="crt-title">Fit Consultant</h3>
             <div style="margin: 20px 0;">
                 <label for="usr-height">Your Height (cm)</label>
-                <input type="text" id="usr-height" placeholder="180">
+                <input type="number" id="usr-height" placeholder="180">
                 <label for="usr-weight">Your Weight (kg)</label>
-                <input type="text" id="usr-weight" placeholder="75">
+                <input type="number" id="usr-weight" placeholder="75">
             </div>
             <button class="btn-black" onclick="cls()">Calculate My Fit</button>
         </div>
