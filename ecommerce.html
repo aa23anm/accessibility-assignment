@@ -7,8 +7,8 @@
     <title>Vogue & Valor | Premium Apparel</title>
     <style>
         :root {
-            --accent: #c5a059;
-            --muted: #5c5c66;
+            --accent: #8a6a2f;
+            --muted: #4a4a52;
             --bg: #ffffff;
         }
         
@@ -61,6 +61,18 @@
         
         .ghost-coupon { opacity: 0; padding: 10px; border: 1px dashed var(--accent); margin-top: 20px; transition: opacity 0.3s; }
         .ghost-coupon:focus-within { opacity: 1; }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -70,16 +82,16 @@
     <header>
         <div class="logo" onclick="location.reload()">VOGUE & VALOR</div>
         <nav class="nav-links" aria-label="Main navigation">
-            <div class="nav-item" onclick="openMod('cart')">Bag (0)</div>
-            <div class="nav-item" onclick="openMod('size')">Size Guide</div>
-            <div class="nav-item" onclick="openMod('auth')">Account</div>
+            <button type="button" class="nav-item" id="cart-btn">Bag (0)</div>
+            <button type="button" class="nav-item" id="size-btn">Size Guide</div>
+            <button type="button" class="nav-item" id="auth-btn">Account</div>
         </nav>
     </header>
 
     <main id="main-content">
     <section class="hero">
         <div>
-            <h3>The Equinox Collection</h3>
+            <h1>The Equinox Collection</h1>
             <p>Timeless silhouettes crafted from sustainably sourced Italian silk. Discover the intersection of comfort and high-fashion utility.</p>
             <button class="btn-black" style="width: auto;" onclick="document.getElementById('catalog').scrollIntoView()">Shop Collection</button>
         </div>
@@ -89,22 +101,23 @@
     
     <div class="grid" id="catalog">
         <div class="product-card" tabindex="0">
-            <img src="https://images.unsplash.com/photo-1539109132382-381bb3f1c2b5?auto=format&fit=crop&w=400&q=80" alt="Model wearing Midnight Trench coat">
+            <img src="https://images.unsplash.com/photo-1539109132382-381bb3f1c2b5?auto=format&fit=crop&w=400&q=80" alt="Woman wearing the Midnight Trench fashion coat">
             <div class="product-info">
                 <span>Midnight Trench</span><br>
                 <span class="price">$890.00</span>
             </div>
         </div>
         <div class="product-card" tabindex="0">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Ivory Pleated Trouser product image">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Ivory Pleated Trouser displayed as part of a fashion outfit">
             <div class="product-info">
                 <span>Ivory Pleated Trouser</span><br>
                 <span class="price">$450.00</span>
             </div>
         </div>
         <div class="product-card" tabindex="0">
-            <button style="width:100%; height:400px; background:#f9f9f9; border:none; cursor:pointer;">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa"><path d="M12 5v14M5 12h14"/></svg>
+            <button type="button" aria-label="Request a custom order" style="width:100%; height:400px; background:#f9f9f9; border:none; cursor:pointer;">
+                <span class="visually-hidden">Request custom order</span>
+                <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa"><path d="M12 5v14M5 12h14"/></svg>
             </button>
             <div class="product-info">
                 <span>Request Custom Order</span>
@@ -115,16 +128,16 @@
 
     <footer class="footer">
         <div>
-            <h5>Boutique Info</h5>
+            <h3>Boutique Info</h3>
             <p>1244 Madison Ave, New York<br>Monday - Friday: 10am - 7pm</p>
         </div>
         <div>
-            <h5>Support</h5>
-            <p>For return policies, <a href="#" style="color: var(--accent);">click here</a>.</p>
-            <p>For shipping updates, <a href="#" style="color: var(--accent);">read more</a>.</p>
+            <h3>Support</h3>
+            <p>For return policies, <a href="returns.html" style="color: var(--accent);">click here</a>.</p>
+            <p>For shipping updates, <a href="shipping.html" style="color: var(--accent);">read more</a>.</p>
         </div>
         <div>
-            <h5>Newsletter</h5>
+            <h3>Newsletter</h3>
             <div class="ghost-coupon">
                 <p style="color: var(--accent); margin: 0;">SECRET_CODE: VOGUE2026</p>
                 <button style="font-size: 0.6rem; padding: 5px;">Copy</button>
